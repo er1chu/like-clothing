@@ -5,7 +5,28 @@ global-reset()
 $backgroundColor = #0e0a20
 $baseUnit = 3vh
 $smallImage = 87vh
+$mobileWidth = "(max-width: 480px) and (min-width: 320px)"
 
+font-url(file)
+	return '../fonts/' + file
+
+webfont(family, file, hack-chrome-windows = false, weight = 'normal')
+	@font-face
+		font-family family
+		src url(font-url(file + '.eot'))
+		src url(font-url(file + '.eot?#iefix')) format('embedded-opentype'),
+			url(font-url(file + '.woff')) format('woff'), 
+			url(font-url(file + '.ttf')) format('truetype'), 
+			url(font-url(file + '.svg#'+ family)) format('svg')
+		font-weight weight
+		font-style normal
+	if hack-chrome-windows
+		@media screen and (-webkit-min-device-pixel-ratio:0)
+			@font-face
+				font-family family
+				src url(font-url(file + '.svg#'+ family)) format('svg')
+
+webfont('Mincho Sans', 'ms-sans-14', true, 'normal')
 
 html, body
 	width: auto

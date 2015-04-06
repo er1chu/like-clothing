@@ -9105,28 +9105,30 @@ $(function () {
 		},
 
 		_initScrollFunctions: function () {
-			// Convert Vertical to Horizontal Scroll on Desktop
-			if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); 
+			
+			if( !mobile ) {
+				// Convert Vertical to Horizontal Scroll on Desktop
 				scrollConverter.activate();
+				// Unblur Videos, Blur Logo on Scroll
+				$(window).scroll($.debounce( 250, true, function(){
+				    $('video').removeClass('big-wavy')
+				    $('.masthead').addClass('logo-wavy')
+				}));
+				// Blur Videos, Unblur Logo on Scroll stop
+				$(window).scroll($.debounce( 250, function(){
+				     $('video').addClass('big-wavy')
+				     $('.masthead').removeClass('logo-wavy')
+				}));
+				// Loop scroll at end of document
+				$(window).scroll(function() {
+					 if ($(window).scrollLeft() + document.documentElement.clientWidth >= $(document).width()) {
+	        			$(window).scrollLeft(0);
+	      			}
+				});
 			} else {
 				$('.piece').addClass('mobile-fallback')
 			}
-			// Unblur Videos, Blur Logo on Scroll
-			$(window).scroll($.debounce( 250, true, function(){
-			    $('video').removeClass('big-wavy')
-			    $('.masthead').addClass('logo-wavy')
-			}));
-			// Blur Videos, Unblur Logo on Scroll stop
-			$(window).scroll($.debounce( 250, function(){
-			     $('video').addClass('big-wavy')
-			     $('.masthead').removeClass('logo-wavy')
-			}));
-			// Loop scroll at end of document
-			$(window).scroll(function() {
-				 if ($(window).scrollLeft() + document.documentElement.clientWidth >= $(document).width()) {
-        			$(window).scrollLeft(0);
-      			}
-			});
 		},
 
 		_initParallax: function () {
@@ -9147,7 +9149,9 @@ $(function () {
 
 			function calculateWidth() {
 
-				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); 
+
+				if (!mobile) {
 					// Initialize variable containing total width of all images
 					$('.wrapper').css('width','100%');
 				} else {

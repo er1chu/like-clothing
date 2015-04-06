@@ -9105,9 +9105,9 @@ $(function () {
 		},
 
 		_initScrollFunctions: function () {
-			var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); 
+			// var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); 
 			
-			if( !mobile ) {
+			// if( !mobile ) {
 				// Convert Vertical to Horizontal Scroll on Desktop
 				scrollConverter.activate();
 				// Unblur Videos, Blur Logo on Scroll
@@ -9126,7 +9126,7 @@ $(function () {
 	        			$(window).scrollLeft(0);
 	      			}
 				});
-			}
+			// }
 		},
 
 		_initParallax: function () {

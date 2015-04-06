@@ -3,6 +3,8 @@
 global-reset()
 
 $backgroundColor = #0e0a20
+$baseUnit = 3vh
+$smallImage = 87vh
 
 
 html, body
@@ -24,10 +26,11 @@ html, body
 		max-width: 100%
 		transition: 0.2s ease
 		&:hover
-			-webkit-filter: blur(30px)
-			filter: url('../img/blur3.svg#blur')
-			opacity: .6
+			opacity: 0
 			cursor: pointer
+
+li
+	list-style: none
 
 .wrapper
 	width: 15000px
@@ -131,36 +134,65 @@ video
 	right: 0
 
 #piece-1
-	max-height: 90vh
-	margin-top: 5vh
-	margin-left: 5vw
-	margin-right: 20vw
+	max-height: $smallImage
+	margin-top: $baseUnit * 2
+	margin-left: $baseUnit
+	margin-bottom: $baseUnit * 3
+	margin-right: $baseUnit * 4
 
 #piece-3
-	max-height: 70vh
-	margin-top: 15vh
-	margin-left: 10vw
-	margin-right: 15vw
+	max-height: $smallImage
+	margin-top: $baseUnit * 2
+	margin-left: $baseUnit
+	margin-bottom: $baseUnit * 3
+	margin-right: $baseUnit * 4
+
+#piece-4a
+	margin-right: $baseUnit * 4
+
+#piece-5
+	max-height: $smallImage
+	margin-top: $baseUnit * 2
+	margin-bottom: $baseUnit * 3
 
 #piece-6
-	max-height: 60vh
-	margin-top: 15vh
-	margin-left: 10vw
-	margin-right: 15vw
+	max-height: $smallImage
+	margin-top: $baseUnit * 2
+	margin-bottom: $baseUnit * 3
+	margin-right: $baseUnit * 4
+	margin-left: $baseUnit
 
-#piece-8
-	max-height: 80vh
-	margin-top: 5vh
-	margin-left: 10vw
-	margin-right: 15vw
+#piece-7
+	max-height: $smallImage
+	margin-top: $baseUnit * 2
+	margin-left: $baseUnit
+	margin-bottom: $baseUnit * 3
+	margin-right: $baseUnit
+#piece-7a
+	margin-right: $baseUnit * 4
+#piece-9
+	margin-right: $baseUnit * 4
 #piece-10
-	max-height: 90vh
-	margin-top: 5vh
-	margin-left: 10vw
-	margin-right: 15vw
+	max-height: $smallImage
+	margin-top: $baseUnit * 2
+	margin-left: $baseUnit
+	margin-bottom: $baseUnit * 3
+#piece-11
+	max-height: $smallImage
+	margin-top: $baseUnit * 2
+	margin-bottom: $baseUnit * 3
+	margin-right: $baseUnit * 4
+#piece-12
+	max-height: $smallImage
+	margin-top: $baseUnit * 2
+	margin-left: $baseUnit * 4
+	margin-bottom: $baseUnit * 3
+	margin-right: $baseUnit
+#piece-13
+	margin-right: $baseUnit * 5
 
 .logo-wavy
-	-webkit-filter: blur(10px)
+	-webkit-filter: blur(30px)
 	filter: url('../img/blur3.svg#blur')
-	opacity: 0.5
+	opacity: 1
 

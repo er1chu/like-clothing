@@ -9126,18 +9126,13 @@ $(function () {
 	        			$(window).scrollLeft(0);
 	      			}
 				});
-			} else {
-				$('.piece').addClass('mobile-fallback');
-				$('.piece').css('max-height','auto');
 			}
 		},
 
 		_initParallax: function () {
-			var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); 
-			if (!mobile) {
+		
 				// Parallax Mouse movement
 				$('.masthead').parallax();
-			}
 
 		},
 
@@ -9153,13 +9148,6 @@ $(function () {
 
 			function calculateWidth() {
 
-				var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); 
-
-				if (mobile) {
-					// Initialize variable containing total width of all images
-					$('.wrapper').css('width','100%');
-				} else {
-
 					var i = 0;
 					// Loop through each image, calculate Width
 					$('.piece').each(function(index,elem){
@@ -9168,7 +9156,6 @@ $(function () {
 					// Width of Wrapper is equal to Width of all images
 					$('.wrapper').css('width',i+'px');
 
-				}
 			}
 
 		},

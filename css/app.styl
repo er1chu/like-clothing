@@ -6,6 +6,10 @@ $backgroundColor = #0e0a20
 $baseUnit = 3vh
 $smallImage = 87vh
 $mobileWidth = "(max-width: 480px) and (min-width: 320px)"
+$leading = 28px
+$defaultType = 22px
+$kerning = 0.01em
+$abbreviation = $defaultType - 1
 
 font-url(file)
 	return '../fonts/' + file
@@ -32,11 +36,16 @@ html, body
 	width: auto
 	height: 100%
 	background: $backgroundColor
+	font-smoothing: antialiased
 	position: relative
 	box-sizing: border-box
 
 body
 	opacity: 1
+	color: #fff
+	font-family: 'Mincho Sans', 'Courier New', courier, monospace
+	letter-spacing: $kerning
+	font-size: $defaultType
 
 .masthead
 	position: fixed
@@ -51,7 +60,9 @@ body
 		max-width: 100%
 		transition: 0.2s ease
 		&:hover
-			opacity: 0
+			-webkit-filter: blur(30px)
+			filter: url('../img/blur3.svg#blur')
+			opacity: 1
 			cursor: pointer
 
 li
@@ -64,6 +75,21 @@ li
 		opacity: 1 !important
 	&.content-blur
 		transform: translateY(-90%)
+		animation: contentglow 5s linear infinite
+		opacity: 1 !important
+
+@keyframes contentglow {
+	0% {
+		-webkit-filter: blur(10px) brightness(100%);
+	}
+	50% {
+		-webkit-filter: blur(20px) brightness(300%);
+	}
+
+	100% {
+		-webkit-filter: blur(10px) brightness(100%);
+	}
+}
 
 .wrapper
 	width: 40000px
@@ -78,6 +104,7 @@ li
 	width: 100%
 	height: 0
 	position: fixed
+	padding-top: 5%
 	bottom:0
 	opacity: 0
 	z-index: 100
@@ -87,6 +114,31 @@ li
 	&.info-loaded
 		height: 90%
 		opacity: 1
+
+	.info-content
+		width: 70%
+		margin: 0 auto
+		line-height: $leading
+	.info-column
+		width: 47.5%
+		float: left
+	.left-col
+		margin-right: 5%
+	h3
+		text-indent: 1em
+	p
+		margin-bottom: 20px
+
+	.hide-info
+		position: absolute
+		top: 5%
+		right: 20px
+		font-size: 72px
+		cursor: pointer
+
+	abbr
+		font-size: $abbreviation
+		letter-spacing: 2px
 
 .videos
 	z-index: 2
@@ -161,6 +213,12 @@ video
 .big-wavy
 	opacity: 0.2
 	-webkit-filter: blur(20px) contrast(800%);
+
+.logo-wavy
+	-webkit-filter: blur(30px)
+	filter: url('../img/blur3.svg#blur')
+	opacity: 1
+
 
 // Layout
 #video-1
@@ -265,9 +323,3 @@ video
 	margin-bottom: $baseUnit
 #piece-16
 	margin-right: $baseUnit * 4
-
-.logo-wavy
-	-webkit-filter: blur(30px)
-	filter: url('../img/blur3.svg#blur')
-	opacity: 1
-

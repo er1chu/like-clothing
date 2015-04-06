@@ -61,11 +61,28 @@ $(function () {
 		},
 
 		_initInformation: function () {
-
+			// Activate Information Section
 			$('.masthead').click(function () {
 				$('.info').addClass('info-loaded');
 				$('.content').addClass('content-blur')
 			})
+			// Detect if Information Section is Loaded
+
+			$('.wrapper').click(function() {
+				hideInfo();
+			})
+
+			$('.hide-info').click(function() {
+				hideInfo();
+			});
+
+			function hideInfo() {
+				if ($('.info').hasClass('info-loaded')){
+					$('.info').removeClass('info-loaded');
+					$('.content').removeClass('content-blur');
+				}
+			}
+
 		}
 	};
 

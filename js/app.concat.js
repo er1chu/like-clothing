@@ -9125,6 +9125,12 @@ $(function () {
 			     $('.masthead').removeClass('logo-wavy')
 			}));
 
+			$(window).scroll(function() {
+				 if ($(window).scrollLeft + $('.wrapper').width() - 10 >= $('.wrapper').width()) {
+        			$(window).scrollLeft = 0;
+      			}
+			});
+
 		},
 
 		_initCheckWidth: function () {
@@ -9132,7 +9138,7 @@ $(function () {
 			$(window).load(function() {
 				var i = 0;
 				$('.piece').each(function(index,elem){
-					i = i + $(this).outerWidth(true) + 0;
+					i = i + $(this).outerWidth(true) + 0.5;
 				});
 				$('.wrapper').css('width',i+'px');
 				// $lastImage = $('.wrapper img:last').position().left + $('.wrapper img:last').outerWidth(true) + 20;
@@ -9142,7 +9148,7 @@ $(function () {
 			$(window).resize($.debounce(500, function(){
 				var i = 0;
 				$('.piece').each(function(index,elem){
-					i = i + $(this).outerWidth(true) + 0;
+					i = i + $(this).outerWidth(true) + 0.5;
 				});
 				$('.wrapper').css('width',i+'px');
 			}));

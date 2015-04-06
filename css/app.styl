@@ -2,7 +2,7 @@
 
 global-reset()
 
-$backgroundColor = #000
+$backgroundColor = #0e0a20
 
 
 html, body
@@ -25,6 +25,7 @@ html, body
 		transition: 0.2s ease
 		&:hover
 			-webkit-filter: blur(30px)
+			filter: url('../img/blur3.svg#blur')
 			opacity: .6
 			cursor: pointer
 
@@ -148,12 +149,18 @@ video
 	margin-right: 15vw
 
 #piece-8
-	max-height: 60vh
-	margin-top: 15vh
+	max-height: 80vh
+	margin-top: 5vh
+	margin-left: 10vw
+	margin-right: 15vw
+#piece-10
+	max-height: 90vh
+	margin-top: 5vh
 	margin-left: 10vw
 	margin-right: 15vw
 
 .logo-wavy
 	-webkit-filter: blur(10px)
+	filter: url('../img/blur3.svg#blur')
 	opacity: 0.5
 

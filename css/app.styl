@@ -15,8 +15,7 @@ html, body
 	box-sizing: border-box
 
 body
-	opacity: 0
-	transition: 0.2 ease
+	opacity: 1
 
 .masthead
 	position: fixed
@@ -43,7 +42,12 @@ li
 	height: 100%
 	position: relative
 	box-sizing: border-box
+	opacity: 0
+	transition: 0.4s ease
 	overflow: auto;
+
+	&.loaded
+		opacity: 1 !important
 
 .videos
 	z-index: 2

@@ -12,6 +12,7 @@ html, body
 	height: 100%
 	background: $backgroundColor
 	position: relative
+	box-sizing: border-box
 
 .masthead
 	position: fixed
@@ -33,10 +34,12 @@ li
 	list-style: none
 
 .wrapper
-	width: 15000px
+	width: 40000px
 	z-index: 3
 	height: 100%
 	position: relative
+	box-sizing: border-box
+	overflow: auto;
 
 .videos
 	z-index: 2
@@ -67,8 +70,10 @@ video
 .images
 	z-index: 1
 	position: relative
+	box-sizing: border-box
 .piece
 	float: left
+	display: inline-block
 	max-height: 100vh;
 
 	img
@@ -190,6 +195,21 @@ video
 	margin-right: $baseUnit
 #piece-13
 	margin-right: $baseUnit * 5
+	max-height: $smallImage
+	margin-top: $baseUnit * 2
+	margin-bottom: $baseUnit
+
+#piece-14
+	margin-right: $baseUnit
+	max-height: $smallImage
+	margin-top: $baseUnit * 2
+	margin-bottom: $baseUnit
+
+#piece-15
+	margin-right: $baseUnit * 5
+	max-height: $smallImage
+	margin-top: $baseUnit * 2
+	margin-bottom: $baseUnit
 
 .logo-wavy
 	-webkit-filter: blur(30px)

@@ -9147,9 +9147,11 @@ $(function () {
 
 			function calculateWidth() {
 
-				if ( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-
+				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 					// Initialize variable containing total width of all images
+					$('.wrapper').css('width','100%');
+				} else {
+
 					var i = 0;
 					// Loop through each image, calculate Width
 					$('.piece').each(function(index,elem){
@@ -9157,6 +9159,7 @@ $(function () {
 					});
 					// Width of Wrapper is equal to Width of all images
 					$('.wrapper').css('width',i+'px');
+
 				}
 			}
 

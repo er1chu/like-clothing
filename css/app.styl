@@ -54,6 +54,9 @@ body
 	letter-spacing: $kerning
 	font-size: $defaultType
 
+	@media $mobileWidth
+		font-size: 16px
+
 .masthead
 	position: fixed
 	width: 50%
@@ -126,14 +129,22 @@ li
 	&.info-loaded
 		height: 90%
 		opacity: 1
+		@media $mobileWidth
+			height: 95%
 
 	.info-content
 		width: 70%
 		margin: 0 auto
 		line-height: $leading
+		@media $mobileWidth
+			line-height: 22px
+			width: 90%
 	.info-column
 		width: 47.5%
 		float: left
+		@media $mobileWidth
+			clear: both;
+			width: 100%
 	.left-col
 		margin-right: 5%
 	h3
@@ -147,6 +158,9 @@ li
 		right: 20px
 		font-size: 52px
 		cursor: pointer
+
+		@media $mobileWidth
+			top: 1%s
 
 	abbr
 		font-size: $abbreviation
@@ -177,6 +191,9 @@ video
 	z-index: 99
 	&:hover
 		opacity: 0
+
+	@media $mobileWidth
+		display: none
 
 .images
 	z-index: 1
@@ -231,6 +248,11 @@ video
 	-webkit-filter: blur(30px)
 	filter: url('../img/blur4.svg#blur')
 	opacity: 0.9
+
+.mobile-fallback
+	clear: both !important
+	width: 100vw!important
+	margin: 0 !important
 
 
 // Layout

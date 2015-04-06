@@ -9105,8 +9105,12 @@ $(function () {
 		},
 
 		_initScrollFunctions: function () {
-			// Convert Vertical to Horizontal Scroll
-			scrollConverter.activate();
+			// Convert Vertical to Horizontal Scroll on Desktop
+			if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				scrollConverter.activate();
+			} else {
+				$('.piece').addClass('mobile-fallback')
+			}
 			// Unblur Videos, Blur Logo on Scroll
 			$(window).scroll($.debounce( 250, true, function(){
 			    $('video').removeClass('big-wavy')
@@ -9143,14 +9147,17 @@ $(function () {
 
 			function calculateWidth() {
 
-				// Initialize variable containing total width of all images
-				var i = 0;
-				// Loop through each image, calculate Width
-				$('.piece').each(function(index,elem){
-					i = i + $(this).outerWidth(true) + 0.5;
-				});
-				// Width of Wrapper is equal to Width of all images
-				$('.wrapper').css('width',i+'px');
+				if ( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+					// Initialize variable containing total width of all images
+					var i = 0;
+					// Loop through each image, calculate Width
+					$('.piece').each(function(index,elem){
+						i = i + $(this).outerWidth(true) + 0.5;
+					});
+					// Width of Wrapper is equal to Width of all images
+					$('.wrapper').css('width',i+'px');
+				}
 			}
 
 		},

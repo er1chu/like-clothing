@@ -14,6 +14,10 @@ html, body
 	position: relative
 	box-sizing: border-box
 
+body
+	opacity: 0
+	transition: 0.2 ease
+
 .masthead
 	position: fixed
 	width: 50%
@@ -119,23 +123,29 @@ video
 #video-1
 	position: fixed
 	top: 0
-	width: 300px
+	width: 20%
 	left: 0
+	video
+		width: 20% !important
+		height: auto !important
 
 #video-2
 	position: fixed
-	bottom: 300px
-	width: 200px
+	bottom: 15%
+	width: 15%
 	left: 0
+	video
+		width: 200px
 
 #video-3
 	position: fixed
-	top: 200px
+	top: 20%
 	right: 20px
+	width: 25%
 #video-4
 	position: fixed
-	top: 20%
-	width: 150px
+	top: 10%
+	width: 10%
 	right: 0
 
 #piece-1
@@ -210,6 +220,8 @@ video
 	max-height: $smallImage
 	margin-top: $baseUnit * 2
 	margin-bottom: $baseUnit
+#piece-16
+	margin-right: $baseUnit * 4
 
 .logo-wavy
 	-webkit-filter: blur(30px)

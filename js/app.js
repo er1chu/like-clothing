@@ -13,7 +13,7 @@ $(function () {
 		},
 
 		_initParallaxScroll: function () {
-			// $('.masthead').parallax();
+			$('.masthead').parallax();
 			
 			// $(window).bind('scroll',function(e){
 			//     parallaxScroll();
@@ -31,8 +31,8 @@ $(function () {
 			}));
 
 			$(window).scroll(function() {
-				 if ($(window).scrollLeft + $('.wrapper').width() - 10 >= $('.wrapper').width()) {
-        			$(window).scrollLeft = 0;
+				 if ($(window).scrollLeft() + document.documentElement.clientWidth >= $(document).width()) {
+        			$(window).scrollLeft(0);
       			}
 			});
 
@@ -41,6 +41,7 @@ $(function () {
 		_initCheckWidth: function () {
 			
 			$(window).load(function() {
+				$('body').css('opacity','1');
 				var i = 0;
 				$('.piece').each(function(index,elem){
 					i = i + $(this).outerWidth(true) + 0.5;

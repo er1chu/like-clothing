@@ -37,8 +37,11 @@ $(function () {
 		},
 
 		_initParallax: function () {
-			// Parallax Mouse movement
-			$('.masthead').parallax();
+			var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); 
+			if (!mobile) {
+				// Parallax Mouse movement
+				$('.masthead').parallax();
+			}
 
 		},
 

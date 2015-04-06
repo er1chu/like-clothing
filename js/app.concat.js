@@ -9126,12 +9126,6 @@ $(function () {
 	        			$(window).scrollLeft(0);
 	      			}
 				});
-			 } else {
-
-			 	$(window).scroll(function(){
-				     $('video').addClass('big-wavy');
-				});
-
 			 }
 		},
 

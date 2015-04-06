@@ -68,8 +68,8 @@ body
 		transition: 0.2s ease
 		&:hover
 			-webkit-filter: blur(30px)
-			filter: url('../img/blur3.svg#blur')
-			opacity: 1
+			filter: url('../img/blur4.svg#blur')
+			opacity: 0.9
 			cursor: pointer
 
 li
@@ -97,6 +97,11 @@ li
 		-webkit-filter: blur(10px) brightness(100%);
 	}
 }
+
+.svg-filter
+	height: 0
+	img
+		height: 0
 
 .wrapper
 	width: 40000px
@@ -220,11 +225,12 @@ video
 .big-wavy
 	opacity: 0.25
 	-webkit-filter: blur(20px) contrast(800%);
+	filter: url('../img/blur5.svg#blur')
 
 .logo-wavy
 	-webkit-filter: blur(30px)
-	filter: url('../img/blur3.svg#blur')
-	opacity: 1
+	filter: url('../img/blur4.svg#blur')
+	opacity: 0.9
 
 
 // Layout

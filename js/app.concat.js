@@ -9127,7 +9127,8 @@ $(function () {
 	      			}
 				});
 			} else {
-				$('.piece').addClass('mobile-fallback')
+				$('.piece').addClass('mobile-fallback');
+				$('.piece').css('max-height','auto');
 			}
 		},
 

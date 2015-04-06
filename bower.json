@@ -1,0 +1,12 @@
+{
+  "name": "like-clothing",
+  "description": "Hounds",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "parallax": "*",
+    "scroll-converter": "https://github.com/koggdal/scroll-converter",
+    "scroll-converter.min": "https://raw.githubusercontent.com/koggdal/scroll-converter/master/scroll-converter.min.js",
+    "jquery-throttle-debounce": "*"
+  }
+}

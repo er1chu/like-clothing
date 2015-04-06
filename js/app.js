@@ -41,9 +41,11 @@ $(function () {
 		},
 
 		_initParallax: function () {
-		
+			// only activate in landscape
+			if (window.innerHeight < window.innerWidth) {
 				// Parallax Mouse movement
 				$('.masthead').parallax();
+			}
 
 		},
 

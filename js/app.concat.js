@@ -9151,7 +9151,7 @@ $(function () {
 
 				var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); 
 
-				if (!mobile) {
+				if (mobile) {
 					// Initialize variable containing total width of all images
 					$('.wrapper').css('width','100%');
 				} else {

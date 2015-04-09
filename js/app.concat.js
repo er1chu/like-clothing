@@ -9107,7 +9107,7 @@ $(function () {
 		_initScrollFunctions: function () {
 			var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); 
 			
-			 if( !mobile ) {
+			 if( !mobile && window.innerHeight < window.innerWidth ) {
 				// Convert Vertical to Horizontal Scroll on Desktop
 				scrollConverter.activate();
 				// Unblur Videos, Blur Logo on Scroll
@@ -9149,7 +9149,7 @@ $(function () {
 			$(window).resize($.debounce(500, calculateWidth));
 
 			function calculateWidth() {
-
+				if ($(window).width() > 480) {
 					var i = 0;
 					// Loop through each image, calculate Width
 					$('.piece').each(function(index,elem){
@@ -9157,6 +9157,10 @@ $(function () {
 					});
 					// Width of Wrapper is equal to Width of all images
 					$('.wrapper').css('width',i+'px');
+				} else {
+
+					$('.wrapper').css('width','100%');
+				}
 
 			}
 

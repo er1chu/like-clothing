@@ -130,22 +130,29 @@ li
 	overflow: auto;
 
 @media (max-width: 480px) and (min-width: 320px) and (orientation: portrait)
-	.alert
-		display: inline-block
-		padding: 10px
-		box-sizing: border-box
-		position: absolute
-		line-height: 18px
-		top: 70%
-		left: 50%
-		transform: translate(-50%,-50%)
-	.wrapper
-		opacity: 0
-	.masthead
+	.piece
 		width: 100%
-		top: 20%
-	abbr
-		font-size: 10px
+		margin: 0
+		padding: 0
+// 	body
+// 		overflow: hidden
+// 	.alert
+// 		display: inline-block
+// 		padding: 10px
+// 		box-sizing: border-box
+// 		position: absolute
+// 		line-height: 18px
+// 		top: 70%
+// 		left: 50%
+// 		transform: translate(-50%,-50%)
+// 	.wrapper
+// 		opacity: 0
+// 		overflow: hidden
+// 	.masthead
+// 		width: 100%
+// 		top: 20%
+// 	abbr
+// 		font-size: 10px
 
 .info
 	width: 100%
@@ -351,6 +358,8 @@ video
 	margin-left: $baseUnit
 	margin-bottom: $baseUnit * 3
 	margin-right: $baseUnit * 4
+	@media $mobileWidth
+		margin: 0
 
 #piece-3
 	max-height: $smallImage
@@ -358,64 +367,88 @@ video
 	margin-left: $baseUnit
 	margin-bottom: $baseUnit * 3
 	margin-right: $baseUnit * 4
-
+	@media $mobileWidth
+		margin: 0
 #piece-4a
 	margin-right: $baseUnit * 4
-
+	@media $mobileWidth
+		margin: 0
 #piece-5
 	max-height: $smallImage
 	margin-top: $baseUnit * 2
 	margin-bottom: $baseUnit * 3
-
+	@media $mobileWidth
+		margin: 0
 #piece-6
 	max-height: $smallImage
 	margin-top: $baseUnit * 2
 	margin-bottom: $baseUnit * 3
 	margin-right: $baseUnit * 4
 	margin-left: $baseUnit
-
+	@media $mobileWidth
+		margin: 0
 #piece-7
 	max-height: $smallImage
 	margin-top: $baseUnit * 2
 	margin-left: $baseUnit
 	margin-bottom: $baseUnit * 3
 	margin-right: $baseUnit
+	@media $mobileWidth
+		margin: 0
 #piece-7a
 	margin-right: $baseUnit * 4
+	@media $mobileWidth
+		margin: 0
 #piece-9
 	margin-right: $baseUnit * 4
+	@media $mobileWidth
+		margin: 0
 #piece-10
 	max-height: $smallImage
 	margin-top: $baseUnit * 2
 	margin-left: $baseUnit
 	margin-bottom: $baseUnit * 3
+	@media $mobileWidth
+		margin: 0
 #piece-11
 	max-height: $smallImage
 	margin-top: $baseUnit * 2
 	margin-bottom: $baseUnit * 3
 	margin-right: $baseUnit * 4
+	@media $mobileWidth
+		margin: 0
 #piece-12
 	max-height: $smallImage
 	margin-top: $baseUnit * 2
 	margin-left: $baseUnit * 4
 	margin-bottom: $baseUnit * 3
 	margin-right: $baseUnit
+	@media $mobileWidth
+		margin: 0
 #piece-13
 	margin-right: $baseUnit * 5
 	max-height: $smallImage
 	margin-top: $baseUnit * 2
 	margin-bottom: $baseUnit
+	@media $mobileWidth
+		margin: 0
 
 #piece-14
 	margin-right: $baseUnit
 	max-height: $smallImage
 	margin-top: $baseUnit * 2
 	margin-bottom: $baseUnit
+	@media $mobileWidth
+		margin: 0
 
 #piece-15
 	margin-right: $baseUnit * 5
 	max-height: $smallImage
 	margin-top: $baseUnit * 2
 	margin-bottom: $baseUnit
+	@media $mobileWidth
+		margin: 0
 #piece-16
 	margin-right: $baseUnit * 4
+	@media $mobileWidth
+		margin: 0

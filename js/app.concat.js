@@ -9107,9 +9107,13 @@ $(function () {
 		_initScrollFunctions: function () {
 			var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); 
 			
-			 if( !mobile && window.innerHeight < window.innerWidth ) {
+			 if( !mobile ) {
 				// Convert Vertical to Horizontal Scroll on Desktop
+				if ($(window).width() > 480) {
 				scrollConverter.activate();
+				} else {
+					scrollConverter.deactivate();
+				}
 				// Unblur Videos, Blur Logo on Scroll
 				$(window).scroll($.debounce( 250, true, function(){
 				    $('video').removeClass('big-wavy')
@@ -9131,7 +9135,7 @@ $(function () {
 
 		_initParallax: function () {
 			// only activate in landscape
-			if (window.innerHeight < window.innerWidth) {
+			if (window.innerHeight < window.innerWidth && $(window).width > 480) {
 				// Parallax Mouse movement
 				$('.masthead').parallax();
 			}
@@ -9150,6 +9154,7 @@ $(function () {
 
 			function calculateWidth() {
 				if ($(window).width() > 480) {
+					scrollConverter.activate();
 					var i = 0;
 					// Loop through each image, calculate Width
 					$('.piece').each(function(index,elem){
@@ -9158,7 +9163,7 @@ $(function () {
 					// Width of Wrapper is equal to Width of all images
 					$('.wrapper').css('width',i+'px');
 				} else {
-
+					scrollConverter.deactivate();
 					$('.wrapper').css('width','100%');
 				}
 

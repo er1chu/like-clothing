@@ -79,7 +79,7 @@ body
 			cursor: pointer
 
 	@media (max-width: 480px) and (min-width: 320px) and (orientation: portrait)
-		position: absolute;
+		position: fixed;
 		width: 50%
 		margin: 0 auto;
 		top: 50%
@@ -133,8 +133,17 @@ li
 	.piece
 		width: 100%
 		margin: 0
-		padding: 5%
+		padding: 2.5% 5% 2.5% 5%
 		box-sizing: border-box
+	.credits, .contact
+		display: none
+	.hide-info
+		margin-top: 0
+	.stockist
+		float: left
+		width: 50%
+	.social
+		float: left
 // 	body
 // 		overflow: hidden
 // 	.alert
@@ -167,16 +176,14 @@ li
 	background: $backgroundColor
 
 	@media only screen and (min-device-width : 375px) and (max-device-width : 736px) and (orientation : landscape)
-		font-size: 10px
 		position: fixed
-		line-height: 12px !important
 
 	&.info-loaded
 		height: 90%
 		opacity: 1
 		@media $mobileWidth
-			position: absolute
-			height: 95%
+			position: fixed
+			height: 90%
 
 	.info-content
 		width: 70%
@@ -185,8 +192,10 @@ li
 		@media $mobileWidth
 			line-height: 22px
 			width: 90%
+			margin: 30px
 		@media only screen and (min-device-width : 375px) and (max-device-width : 736px) and (orientation : landscape)
-			line-height: 12px
+			font-size: 12px
+			line-height: 16px
 	.info-column
 		width: 47.5%
 		float: left
@@ -247,6 +256,8 @@ video
 		opacity: 0
 
 	@media $mobileWidth
+		display: none
+	@media only screen and (min-device-width : 375px) and (max-device-width : 736px) and (orientation : landscape)
 		display: none
 
 .images
@@ -453,3 +464,6 @@ video
 	margin-right: $baseUnit * 4
 	@media $mobileWidth
 		margin: 0
+#piece-17
+	@media $mobileWidth
+		display: none
